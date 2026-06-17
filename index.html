@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 A Special Surprise</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Poppins', sans-serif;
+background: linear-gradient(135deg,#ffe6f0,#fff0f5);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+}
+
+h1{
+color:#ff4d6d;
+font-size:2.2rem;
+text-align:center;
+animation: fadeIn 2s ease-in-out;
+}
+
+p{
+color:#444;
+text-align:center;
+max-width:300px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+background:#ff4d6d;
+color:white;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ff2e63;
+}
+
+/* floating hearts */
+.heart{
+position:absolute;
+width:15px;
+height:15px;
+background:#ff4d6d;
+transform:rotate(45deg);
+animation: float 6s infinite;
+opacity:0.6;
+}
+
+.heart::before,
+.heart::after{
+content:"";
+position:absolute;
+width:15px;
+height:15px;
+background:#ff4d6d;
+border-radius:50%;
+}
+
+.heart::before{top:-7px;left:0;}
+.heart::after{left:-7px;top:0;}
+
+@keyframes float{
+0%{transform:translateY(0) rotate(45deg);}
+100%{transform:translateY(-700px) rotate(45deg);}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 A Little Surprise For You 💖</h1>
+<p>Somewhere inside this little world… there is something waiting for you 💌</p>
+
+<a href="love.html">
+<button>Open Surprise 💕</button>
+</a>
+
+<script>
+// hearts generator
+for(let i=0;i<25;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+h.style.top=Math.random()*100+"vh";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
