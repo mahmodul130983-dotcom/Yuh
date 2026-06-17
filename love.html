@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 For You Only pakhiii</title>
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background: linear-gradient(135deg,#fff0f5,#ffe6f0);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+max-width:320px;
+animation: pop 1.5s ease;
+}
+
+h1{
+color:#ff4d6d;
+}
+
+p{
+color:#555;
+line-height:1.5;
+}
+
+button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2e63;
+}
+
+/* hearts */
+.heart{
+position:absolute;
+width:12px;
+height:12px;
+background:#ff4d6d;
+transform:rotate(45deg);
+animation: float 6s infinite;
+opacity:0.5;
+}
+
+.heart::before,
+.heart::after{
+content:"";
+position:absolute;
+width:12px;
+height:12px;
+background:#ff4d6d;
+border-radius:50%;
+}
+
+.heart::before{top:-6px;}
+.heart::after{left:-6px;}
+
+@keyframes float{
+0%{transform:translateY(0) rotate(45deg);}
+100%{transform:translateY(-700px) rotate(45deg);}
+}
+
+@keyframes pop{
+from{transform:scale(0);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>💖 Hey,pakhiiii💖</h1>
+<p>
+I don’t know how to say it perfectly…<br><br>
+But you mean a little more than “special” to me 💕<br><br>
+Every moment feels better when you’re around ✨
+</p>
+
+<button onclick="alert('You just made me smile 💖')">
+Click Me 💌
+</button>
+</div>
+
+<script>
+for(let i=0;i<30;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+h.style.top=Math.random()*100+"vh";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
